@@ -1,0 +1,415 @@
+.convoice-section {
+  background: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.convoice-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.back-button {
+  align-self: flex-start;
+  background: transparent;
+  border: 2px solid #ff7061;
+  color: #ff7061;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  background: #ff7061;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.convoice-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.convoice-modal {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #666;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1001;
+}
+
+.modal-close-button:hover {
+  color: #ff7061;
+}
+
+.convoice-modal-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.convoice-modal h3 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff7061;
+  margin: 0;
+}
+
+.convoice-modal p {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin: 0;
+}
+
+.convoice-content {
+  width: 100%;
+  color: #333;
+}
+
+.convoice-title {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 3rem 0;
+  line-height: 1.2;
+  color: #000;
+  text-align: center;
+}
+
+.convoice-overview {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: flex-start;
+}
+
+.overview-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.convoice-demo-container {
+  position: relative;
+  width: 500px;
+  height: 350px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.convoice-demo-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+}
+
+.convoice-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.play-demo-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 112, 97, 0.9);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.play-demo-button:hover {
+  background: rgba(255, 112, 97, 1);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.image-subtitle {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.overview-right {
+  flex: 2;
+  color: #333;
+}
+
+.overview-right h2 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #ff7061;
+}
+
+.overview-right h3 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem 0;
+  color: #555;
+}
+
+.overview-right p {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.overview-right ul {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.overview-right li {
+  margin-bottom: 0.5rem;
+}
+
+.overview-right strong {
+  color: #ff7061;
+  font-weight: 600;
+}
+
+.convoice-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.work-in-progress {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #999;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  background: #f8f8f8;
+  display: inline-block;
+}
+
+.convoice-details {
+  color: #333;
+}
+
+.convoice-details h2 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  color: #ff7061;
+}
+
+.convoice-details h3 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem 0;
+  color: #555;
+}
+
+.convoice-details p {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.convoice-details ul {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.convoice-details li {
+  margin-bottom: 0.5rem;
+}
+
+.convoice-details strong {
+  color: #ff7061;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .convoice-section {
+    padding: 1.5rem 0;
+    padding-top: 100px;
+  }
+  .convoice-container {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3rem 3rem;
+  }
+  .convoice-title {
+    font-size: 1.7rem;
+    margin: 0 0 2rem 0;
+  }
+  .convoice-overview {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .overview-left {
+    justify-content: center;
+  }
+  .convoice-demo-container {
+    width: 400px;
+    height: 280px;
+  }
+  .image-subtitle {
+    font-size: 0.8rem;
+  }
+  .overview-right h2 {
+    font-size: 1.5rem;
+  }
+  .overview-right h3 {
+    font-size: 1.2rem;
+  }
+  .overview-right p {
+    font-size: 1rem;
+  }
+  .convoice-details h2 {
+    font-size: 1.5rem;
+  }
+  .convoice-details h3 {
+    font-size: 1.3rem;
+  }
+  .convoice-details p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .convoice-section {
+    padding: 1.5rem 0;
+    padding-top: 100px;
+  }
+  .convoice-container {
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+  .convoice-title {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem 0;
+  }
+  .convoice-overview {
+    gap: 1.5rem;
+  }
+  .convoice-demo-container {
+    width: 300px;
+    height: 210px;
+  }
+  .image-subtitle {
+    font-size: 0.7rem;
+  }
+  .overview-right h2 {
+    font-size: 1.3rem;
+  }
+  .overview-right h3 {
+    font-size: 1.1rem;
+  }
+  .overview-right p {
+    font-size: 0.9rem;
+  }
+  .overview-right ul {
+    font-size: 0.9rem;
+  }
+  .convoice-details h2 {
+    font-size: 1.3rem;
+  }
+  .convoice-details h3 {
+    font-size: 1.1rem;
+  }
+  .convoice-details p {
+    font-size: 0.9rem;
+  }
+  .work-in-progress {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.2rem;
+  }
+  .back-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+} 

@@ -1,0 +1,312 @@
+.quadrotor-section {
+  background: #fff;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+}
+
+.quadrotor-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.back-button {
+  align-self: flex-start;
+  background: transparent;
+  border: 2px solid #ff7061;
+  color: #ff7061;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  background: #ff7061;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.quadrotor-content {
+  width: 100%;
+  color: #333;
+}
+
+.quadrotor-title {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 3rem 0;
+  line-height: 1.2;
+  color: #000;
+  text-align: center;
+}
+
+.quadrotor-overview {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: flex-start;
+}
+
+.overview-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quadrotor-image {
+  width: 400px;
+  height: 300px;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.image-subtitle {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.overview-right {
+  flex: 2;
+  color: #333;
+}
+
+.overview-right h2 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: #ff7061;
+}
+
+.overview-right h3 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem 0;
+  color: #555;
+}
+
+.overview-right p {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.overview-right ul {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.overview-right li {
+  margin-bottom: 0.5rem;
+}
+
+.overview-right strong {
+  color: #ff7061;
+  font-weight: 600;
+}
+
+.quadrotor-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.link-button {
+  background: #ff7061;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #ff7061;
+}
+
+.link-button:hover {
+  background: transparent;
+  color: #ff7061;
+  transform: translateY(-2px);
+}
+
+.quadrotor-details {
+  color: #333;
+}
+
+.quadrotor-details h2 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  color: #ff7061;
+}
+
+.quadrotor-details h3 {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem 0;
+  color: #555;
+}
+
+.quadrotor-details p {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.quadrotor-details ul {
+  font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.quadrotor-details li {
+  margin-bottom: 0.5rem;
+}
+
+.quadrotor-details strong {
+  color: #ff7061;
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .quadrotor-section {
+    padding: 1.5rem 0;
+    padding-top: 100px;
+  }
+  .quadrotor-container {
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3rem 3rem;
+  }
+  .quadrotor-title {
+    font-size: 1.7rem;
+    margin: 0 0 2rem 0;
+  }
+  .quadrotor-overview {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .overview-left {
+    justify-content: center;
+  }
+  .quadrotor-image {
+    width: 300px;
+    height: 225px;
+  }
+  .image-subtitle {
+    font-size: 0.8rem;
+  }
+  .overview-right h2 {
+    font-size: 1.5rem;
+  }
+  .overview-right h3 {
+    font-size: 1.2rem;
+  }
+  .overview-right p {
+    font-size: 1rem;
+  }
+  .quadrotor-details h2 {
+    font-size: 1.5rem;
+  }
+  .quadrotor-details h3 {
+    font-size: 1.3rem;
+  }
+  .quadrotor-details p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .quadrotor-section {
+    padding: 1.5rem 0;
+    padding-top: 100px;
+  }
+  .quadrotor-container {
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+  .quadrotor-title {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem 0;
+  }
+  .quadrotor-overview {
+    gap: 1.5rem;
+  }
+  .quadrotor-image {
+    width: 250px;
+    height: 180px;
+  }
+  .image-subtitle {
+    font-size: 0.7rem;
+  }
+  .overview-right h2 {
+    font-size: 1.3rem;
+  }
+  .overview-right h3 {
+    font-size: 1.1rem;
+  }
+  .overview-right p {
+    font-size: 0.9rem;
+  }
+  .overview-right ul {
+    font-size: 0.9rem;
+  }
+  .quadrotor-details h2 {
+    font-size: 1.3rem;
+  }
+  .quadrotor-details h3 {
+    font-size: 1.1rem;
+  }
+  .quadrotor-details p {
+    font-size: 0.9rem;
+  }
+  .link-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+  .back-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+} 

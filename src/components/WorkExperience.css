@@ -1,0 +1,287 @@
+.work-section {
+  background: #fcf7f2;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.work-container {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.work-title {
+  font-family: 'Oxanium';
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin: 3rem 0 3rem 0;
+  line-height: 1.2;
+  color: #111;
+}
+
+.work-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5vw;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 400px;
+  justify-content: space-between;
+  width: 23vw;
+  min-width: 400px;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.work-card.present {
+  border: 3px solid #ff8a65;
+  box-shadow: 0 6px 24px rgba(255, 138, 101, 0.13);
+  position: relative;
+}
+
+.work-card.present .present-badge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: #ff8a65;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(255, 138, 101, 0.15);
+  font-family: 'Oxanium';
+}
+
+.work-logo-container {
+  margin-bottom: 1.5rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work-logo {
+  width: 80px;
+  height: 80px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.work-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.work-card-content {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.work-card-title {
+  font-family: 'Oxanium';
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff7061;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.work-card-company {
+  font-family: 'Oxanium';
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.work-card-date {
+  font-family: 'Oxanium';
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.work-card-description {
+  font-family: 'Oxanium';
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  text-align: left;
+  flex: 1;
+}
+
+.work-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.work-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.work-card-link:focus {
+  outline: none;
+}
+
+.work-card-link:focus-visible {
+  outline: none;
+}
+
+.work-subtitle {
+  font-family: 'Oxanium';
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 3rem 0 2rem 0;
+  color: #111;
+}
+
+.work-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1350px) {
+  .work-card {
+    width: 42.5vw;
+  }
+}
+
+@media (max-width: 1100px) {
+  .work-section {
+    min-height: 80vh;
+  }
+  
+  .work-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+    width: 95vw;
+    width: 700px;
+  }
+  
+  .work-title {
+    padding-top: 3rem;
+    font-size: 2.2rem;
+  }
+
+  .work-card-description {
+    font-size: 0.85rem;
+  }
+  
+  .work-left {
+    max-width: 700px;
+    padding: 3rem 0;
+  }
+  
+  .work-grid {
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .work-card {
+    min-width: 325px;
+    width: 32.5vw;
+  }
+  
+  .work-card {
+    height: 400px;
+  }
+  
+  .work-logo-container {
+    height: 70px;
+  }
+  
+  .work-logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .work-right {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .work-section {
+    min-height: 80vh;
+  }
+  
+  .work-container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .work-title {
+    font-size: 2.2rem;
+  }
+  
+  .work-grid {
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .work-card {
+    flex: 1 1 100%;
+    width: 90vw;
+  }
+  
+  .work-card {
+    height: auto;
+    min-height: 300px;
+    padding: 1.5rem 1rem;
+  }
+  
+  .work-logo-container {
+    height: 60px;
+  }
+  
+  .work-logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .work-card-title {
+    font-size: 1.2rem;
+  }
+} 
