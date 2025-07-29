@@ -442,7 +442,7 @@
     gap: 2rem;
     padding: 0 1.5rem;
     width: 100%;
-    max-width: 700px;
+    max-width: 75vw;
   }
   
   .research-title {
@@ -477,14 +477,14 @@
   
   .research-project-offline {
     display: block;
-    width: 125%;
+    width: 135%;
     height: auto;
     object-fit: contain;
   }
   
   .research-project-video {
     display: block;
-    width: 125%;
+    width: 135%;
     height: auto;
     object-fit: contain;
   }
