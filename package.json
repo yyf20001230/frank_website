@@ -2,6 +2,7 @@
   "name": "frank_website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://yyf20001230.github.io/frank_website",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
