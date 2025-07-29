@@ -249,18 +249,29 @@
   .project-card {
     flex-direction: column;
     height: auto;
-    min-height: 300px;
+    min-height: 450px;
   }
   .project-image {
     width: 100%;
-    height: 250px;
+    height: 350px;
     border-right: none;
     border-bottom: 1px solid #f0f0f0;
+    display: block;
   }
   .project-media {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
+    display: block;
+  }
+  
+  .project-image-placeholder {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .project-content {
     padding: 1.2rem;
@@ -270,6 +281,7 @@
   }
   .project-desc {
     font-size: 0.9rem;
+    display: none;
   }
   .tech-tags {
     gap: 0.4rem;
@@ -301,13 +313,24 @@
     font-size: 1.5rem;
   }
   .project-card {
-    min-height: 250px;
+    min-height: 500px;
   }
   .project-image {
-    height: 200px;
+    height: 400px;
+    display: block;
   }
   .project-media {
-    height: 200px;
+    height: 400px;
+    display: block;
+  }
+  
+  .project-image-placeholder {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .project-content {
     padding: 0.8rem;
@@ -317,6 +340,7 @@
   }
   .project-desc {
     font-size: 0.8rem;
+    display: none;
   }
   .project-link {
     font-size: 0.8rem;

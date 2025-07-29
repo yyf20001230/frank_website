@@ -534,6 +534,9 @@
   .math-equation {
     font-size: 1rem;
     padding: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
   
   .polar-express-details .katex {

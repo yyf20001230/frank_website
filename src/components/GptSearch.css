@@ -549,34 +549,14 @@
 
 /* iPad Landscape Mode */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .gpt-float-icon.expanded {
-    width: 70vw !important;
-    min-width: 0 !important;
-    max-width: 70vw;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .gpt-chat-bubble {
-    max-width: 65vw;
-    font-size: 1rem;
+  .gpt-float-container {
+    display: none;
   }
 }
 
 @media (max-width: 600px) {
   .gpt-float-container {
-    bottom: 1.2rem;
-    right: 1.2rem;
-  }
-  .gpt-float-icon.expanded {
-    width: 85vw !important;
-    min-width: 0 !important;
-    max-width: 85vw;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .gpt-chat-bubble {
-    max-width: 80vw;
-    font-size: 0.98rem;
+    display: none;
   }
 }
 
