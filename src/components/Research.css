@@ -589,8 +589,11 @@
     object-fit: contain;
   }
 
-  .research-project-video
-  .research-proejct-offline {
+  .research-project-offline {
+    width: 135%;
+  }
+
+  .research-project-video {
     width: 135%;
   }
   

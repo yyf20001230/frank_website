@@ -109,13 +109,14 @@
 
 .placeholder-content img,
 .placeholder-content video {
-  width: 70vw;
+  width: 100%;
   max-width: none;
   min-width: auto;
-  margin-left: 20vw;
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
 }
 
 .image-subtitle {
@@ -299,6 +300,8 @@
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
 }
 
 .results-table {

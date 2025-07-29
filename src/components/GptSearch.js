@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaSearch, FaTimes, FaCommentDots } from 'react-icons/fa';
+import { FaSearch, FaCommentDots } from 'react-icons/fa';
 import './GptSearch.css';
 
 function GptSearch() {
@@ -9,31 +9,37 @@ function GptSearch() {
   const [error, setError] = useState('');
   const [readmeContent, setReadmeContent] = useState('');
   const [hovered, setHovered] = useState(false);
+  const [clickedOutside, setClickedOutside] = useState(false);
+  const [shouldShowResponse, setShouldShowResponse] = useState(false);
   const [lastResponseQuery, setLastResponseQuery] = useState('');
-  const [is1100pxScreen, setIs1100pxScreen] = useState(false);
+        const [isTouchScreen, setIsTouchScreen] = useState(false);
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const textareaRef = useRef(null);
 
   useEffect(() => {
-    fetch('/README.md')
+    fetch('/info.md')
       .then(res => res.text())
       .then(text => setReadmeContent(text))
       .catch(() => setReadmeContent(''));
   }, []);
 
-  // Check screen size on mount and resize
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIs1100pxScreen(window.innerWidth <= 1100);
-    };
-    
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-    
-    return () => {
-      window.removeEventListener('resize', checkScreenSize);
-    };
-  }, []);
+              // Check for touch screen devices
+      useEffect(() => {
+        const checkTouchScreen = () => {
+          // Check for touch capability or common touch screen indicators
+          const isTouch = 'ontouchstart' in window || 
+                          navigator.maxTouchPoints > 0 || 
+                          navigator.msMaxTouchPoints > 0;
+          setIsTouchScreen(isTouch);
+        };
+        
+        checkTouchScreen();
+        window.addEventListener('resize', checkTouchScreen);
+        
+        return () => {
+          window.removeEventListener('resize', checkTouchScreen);
+        };
+      }, []);
 
   // Clear response if input changes from last response
   useEffect(() => {
@@ -42,6 +48,12 @@ function GptSearch() {
       setError('');
     }
   }, [query, lastResponseQuery]);
+
+  // Manage shouldShowResponse state
+  useEffect(() => {
+    const shouldShow = (hovered || query.length > 0) && query === lastResponseQuery && (result || error) && !clickedOutside;
+    setShouldShowResponse(shouldShow);
+  }, [hovered, query, lastResponseQuery, result, error, clickedOutside]);
 
   const systemPrompt = `You are an AI assistant for Frank Yang’s personal website. Frank is a Computer Science MS student at Northwestern, robotics researcher, and software engineer. The site covers his research, work experience, projects, teaching, and cinematography. Give concise answers (≤100 words) to questions about Frank, and always suggest which section (About, News, Work Experience, Research, Projects, Cinematography) the user should visit for more details.\n\n---\n\n` + readmeContent;
 
@@ -97,14 +109,6 @@ function GptSearch() {
     setLoading(false);
   };
 
-  const handleClear = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setQuery('');
-    textareaRef.current && textareaRef.current.focus();
-    setLastResponseQuery('');
-  };
-
   // Submit on Enter, new line on Shift+Enter
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -117,46 +121,49 @@ function GptSearch() {
   };
 
   // Show response if not shrunk and query matches lastResponseQuery
-  const shouldShowResponse = (hovered || query.length > 0) && query === lastResponseQuery && (result || error);
   const barHeight = query.split('\n').length > 1 ? 80 : 40;
-  const expanded = hovered || query.length > 0;
+  const expanded = hovered || (query.length > 0 && !clickedOutside);
 
   // Close on click outside
   const containerRef = useRef(null);
   useEffect(() => {
     function handleClickOutside(event) {
       if (containerRef.current && !containerRef.current.contains(event.target)) {
-        // Never collapse if there's text in the input
-        if (query.length === 0) {
-          setHovered(false);
-        }
+        // collapse even if there's text in the input
+        setHovered(false);
+        setClickedOutside(true);
+        setShouldShowResponse(false);
       }
     }
-    // Only add click outside listener if there's no text
-    // This ensures the chatbot never collapses when there's text
-    if (query.length === 0) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
+    
+    // Always add the click outside listener
+    document.addEventListener('mousedown', handleClickOutside);
+    
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [query.length]);
+  }, []);
 
-  // Don't render the component on mobile/tablet
-  // if (isMobileOrTablet) {
-  //   return null;
-  // }
+  // Don't render the component on touch screen devices
+  if (isTouchScreen) {
+    return null;
+  }
 
   return (
     <div className="gpt-float-container" ref={containerRef}
-      onMouseEnter={() => setHovered(true)}
+      onMouseEnter={() => {
+        setHovered(true);
+        setClickedOutside(false);
+      }}
       onMouseLeave={() => { 
         // Only set hover to false if there's no text, otherwise keep it expanded
         if (query.length === 0) {
           setHovered(false);
         }
+      }}
+      onClick={() => {
+        setHovered(true);
+        setClickedOutside(false);
       }}
     >
       {shouldShowResponse && (
@@ -171,9 +178,13 @@ function GptSearch() {
         style={{ width: expanded ? 350 : 64, minWidth: expanded ? 350 : 64, height: expanded ? barHeight + 24 : 64 }}
       >
         {!expanded ? (
-          <FaCommentDots className="gpt-float-main-icon" />
+          <FaCommentDots 
+            className="gpt-float-main-icon" 
+            onClick={() => setHovered(true)}
+            style={{ cursor: 'pointer' }}
+          />
         ) : (
-          <form className="gpt-float-form" onSubmit={handleSubmit}>
+          <form className="gpt-float-form" onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}>
             <div className="gpt-float-bar-inner" style={{ height: barHeight, alignItems: 'center' }}>
               <textarea
                 className="gpt-float-search-bar"
@@ -185,6 +196,10 @@ function GptSearch() {
                 rows={query.split('\n').length > 1 ? 2 : 1}
                 maxLength={400}
                 onKeyDown={handleKeyDown}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setHovered(true);
+                }}
                 style={{ 
                   resize: 'none', 
                   paddingRight: 36, 
@@ -199,32 +214,20 @@ function GptSearch() {
                 }}
               />
               {!loading && (
-                is1100pxScreen ? (
-                  <button 
-                    className="gpt-float-search-btn" 
-                    type="button" 
-                    onClick={handleSubmit} 
-                    onMouseDown={(e) => e.preventDefault()}
-                    tabIndex={0} 
-                    aria-label="Search"
-                    disabled={!apiKey || !query.trim()}
-                  >
-                    <FaSearch />
-                  </button>
-                ) : (
-                  query.length > 0 && (
-                    <button 
-                      className="gpt-float-clear-btn" 
-                      type="button" 
-                      onClick={handleClear} 
-                      onMouseDown={(e) => e.preventDefault()}
-                      tabIndex={0} 
-                      aria-label="Clear"
-                    >
-                      <FaTimes />
-                    </button>
-                  )
-                )
+                <button 
+                  className="gpt-float-search-btn" 
+                  type="button" 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleSubmit(e);
+                  }} 
+                  onMouseDown={(e) => e.preventDefault()}
+                  tabIndex={0} 
+                  aria-label="Search"
+                  disabled={!apiKey || !query.trim()}
+                >
+                  <FaSearch />
+                </button>
               )}
               {loading && (
                 <span className="gpt-float-loading" />

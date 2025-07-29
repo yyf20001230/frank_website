@@ -497,8 +497,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
 }
 .gpt-float-clear-btn:hover {
   background: #f0f0f0;
@@ -521,8 +522,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
 }
 
 .gpt-float-search-btn:hover:not(:disabled) {
@@ -638,5 +640,12 @@
   }
   .gpt-float-search-bar {
     font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Hide chatbox for screens less than 700px */
+@media (max-width: 700px) {
+  .gpt-float-container {
+    display: none !important;
   }
 } 
