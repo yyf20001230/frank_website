@@ -1,6 +1,6 @@
 .navigation {
   background-color: #FCFAF7;
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   font-family: 'Oxanium', 'Montserrat', Arial, sans-serif;
   position: fixed;
   top: 0;
@@ -94,6 +94,12 @@
 
 .nav-text-small {
   display: none;
+}
+
+@media (max-width: 1100px) {
+  .navigation {
+    padding: 1.25rem 0;
+  }
 }
 
 @media (max-width: 700px) {

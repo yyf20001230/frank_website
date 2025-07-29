@@ -9,11 +9,12 @@
 }
 
 .research-container {
-  max-width: 75vw;
+  max-width: 80vw;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 3rem 0;
+  padding: 0;
+  margin: 0;
 }
 
 .research-left {
@@ -476,14 +477,14 @@
   
   .research-project-offline {
     display: block;
-    width: 100%;
+    width: 125%;
     height: auto;
     object-fit: contain;
   }
   
   .research-project-video {
     display: block;
-    width: 100%;
+    width: 125%;
     height: auto;
     object-fit: contain;
   }
