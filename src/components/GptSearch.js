@@ -10,6 +10,7 @@ function GptSearch() {
   const [readmeContent, setReadmeContent] = useState('');
   const [hovered, setHovered] = useState(false);
   const [lastResponseQuery, setLastResponseQuery] = useState('');
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const textareaRef = useRef(null);
 
@@ -18,6 +19,20 @@ function GptSearch() {
       .then(res => res.text())
       .then(text => setReadmeContent(text))
       .catch(() => setReadmeContent(''));
+  }, []);
+
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobileOrTablet(window.innerWidth <= 1024);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => {
+      window.removeEventListener('resize', checkScreenSize);
+    };
   }, []);
 
   // Clear response if input changes from last response
@@ -120,6 +135,11 @@ function GptSearch() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [expanded, query.length]);
+
+  // Don't render the component on mobile/tablet
+  if (isMobileOrTablet) {
+    return null;
+  }
 
   return (
     <div className="gpt-float-container" ref={containerRef}

@@ -12,6 +12,8 @@
   padding-top: max(1rem, env(safe-area-inset-top));
   padding-left: max(0, env(safe-area-inset-left));
   padding-right: max(0, env(safe-area-inset-right));
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 .nav-container {

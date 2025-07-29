@@ -12,12 +12,14 @@ html, body {
   background-color: #FAF6F2;
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* Main content for single page layout */
@@ -26,6 +28,8 @@ html, body {
   padding-top: 80px;
   /* Safe area support for iPhone */
   padding-top: max(80px, calc(80px + env(safe-area-inset-top)));
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .main-content section {
@@ -36,6 +40,20 @@ html, body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* iPad Landscape Mode - Account for thicker navigation bar */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-content {
+    padding-top: max(100px, calc(100px + env(safe-area-inset-top)));
+  }
+}
+
+/* iPad Portrait Mode - Account for even thicker navigation bar */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .main-content {
+    padding-top: max(120px, calc(120px + env(safe-area-inset-top)));
+  }
 }
 
 /* Responsive design */
@@ -64,6 +82,22 @@ html, body {
   /* Enhanced safe area support for mobile */
   .main-content {
     padding-top: max(70px, calc(70px + env(safe-area-inset-top)));
+  }
+  
+  /* Prevent horizontal overflow on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .App {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .main-content {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
