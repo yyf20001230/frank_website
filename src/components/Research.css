@@ -212,14 +212,14 @@
 }
 
 .research-project-media {
-  width: 400px;
+  width: 450px;
   min-height: 225px;
   object-fit: contain;
   display: block;
 }
 
 .research-project-offline {
-  width: 450px;
+  width: 500px;
   min-height: 225px;
   object-fit: contain;
   scale: 1.05;
@@ -477,14 +477,14 @@
   
   .research-project-offline {
     display: block;
-    width: 135%;
+    width: 125%;
     height: auto;
     object-fit: contain;
   }
   
   .research-project-video {
     display: block;
-    width: 135%;
+    width: 125%;
     height: auto;
     object-fit: contain;
   }
