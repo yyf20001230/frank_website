@@ -1,5 +1,5 @@
 .research-section {
-  background: #fff;
+  background: #fcf7f2;
   min-height: 95vh;
   display: flex;
   align-items: center;
@@ -9,11 +9,11 @@
 }
 
 .research-container {
-  max-width: 1400px;
+  max-width: 75vw;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 3rem 0;
 }
 
 .research-left {
@@ -226,7 +226,7 @@
 }
 
 .research-project-video {
-  width: 450px;
+  width: 500px;
   min-height: 225px;
   object-fit: contain;
   display: block;
@@ -506,22 +506,34 @@
   .research-container {
     flex-direction: column;
     gap: 2rem;
-    padding: 0 1.5rem;
+    padding: 0 2.5rem;
   }
   
   .research-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
   
   .research-left {
     width: 100%;
   }
   
+  .research-intro p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  
+  .research-intro li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+  
   .research-project-content {
     padding: 1.5rem;
   }
   
-    .research-project-title {
+  .research-project-title {
     font-size: 0.9rem;
   }
 
@@ -534,7 +546,23 @@
   }
 
   .research-publication-item {
+    font-size: 0.8rem;
+  }
+  
+  .research-publication-title {
     font-size: 0.9rem;
+  }
+  
+  .research-publication-authors {
+    font-size: 0.8rem;
+  }
+  
+  .research-publication-venue {
+    font-size: 0.8rem;
+  }
+  
+  .research-publication-status {
+    font-size: 0.7rem;
   }
   
   .research-right {
@@ -554,13 +582,16 @@
     display: block;
   }
   
-  .research-project-media,
-  .research-project-offline,
-  .research-project-video {
+  .research-project-media {
     width: 100%;
     height: auto;
     max-height: 400px;
     object-fit: contain;
+  }
+
+  .research-project-video
+  .research-proejct-offline {
+    width: 135%;
   }
   
   .research-project-card {

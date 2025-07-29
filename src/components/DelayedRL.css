@@ -420,7 +420,7 @@
     padding-top: 100px;
   }
   .delayed-rl-container {
-    padding: 0 2rem;
+    padding: 0;
     gap: 2rem;
   }
   .delayed-rl-title {
@@ -437,6 +437,7 @@
   
   .image-subtitle {
     font-size: 0.7rem;
+    text-align: center;
   }
   .overview-right h2 {
     font-size: 1.3rem;
@@ -470,7 +471,7 @@
   
   .math-equation {
     font-size: 1rem;
-    padding: 1rem;
+    padding: 0;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
@@ -481,7 +482,8 @@
   }
   
   .image-placeholder {
-    padding: 1.5rem;
+    padding: 0;
+    text-align: center;
   }
   
   .placeholder-content span {
@@ -494,20 +496,22 @@
   
   .placeholder-content img {
     width: 100%;
-    max-width: 600px;
     height: auto;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
   
   .image-placeholder-large .placeholder-content img {
     width: 100%;
-    max-width: 800px;
     height: auto;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
   
   .results-table {
-    padding: 1rem;
+    padding: 0;
   }
   
   .results-table h4 {

@@ -1,5 +1,5 @@
 .projects-section {
-  background: #fcf7f2;
+  background: #ffffff;
   min-height: 95vh;
   display: flex;
   align-items: center;
@@ -9,11 +9,11 @@
 }
 
 .projects-container {
-  max-width: 1400px;
+  max-width: 75vw;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 3rem;
+  padding: 3rem 0;
 }
 
 .projects-left {
@@ -308,7 +308,7 @@
     padding: 1.5rem 0;
   }
   .projects-container {
-    padding: 0 1.5rem;
+    padding: 0 2.5rem;
     gap: 2rem;
   }
   .projects-title {

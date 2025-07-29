@@ -270,7 +270,7 @@
     padding-top: 100px;
   }
   .quadrotor-container {
-    padding: 0 2rem;
+    padding: 0;
     gap: 2rem;
   }
   .quadrotor-title {
@@ -286,6 +286,7 @@
   }
   .image-subtitle {
     font-size: 0.7rem;
+    text-align: center;
   }
   .overview-right h2 {
     font-size: 1.3rem;

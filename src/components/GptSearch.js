@@ -10,7 +10,6 @@ function GptSearch() {
   const [readmeContent, setReadmeContent] = useState('');
   const [hovered, setHovered] = useState(false);
   const [lastResponseQuery, setLastResponseQuery] = useState('');
-  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const [is1100pxScreen, setIs1100pxScreen] = useState(false);
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const textareaRef = useRef(null);
@@ -25,7 +24,6 @@ function GptSearch() {
   // Check screen size on mount and resize
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobileOrTablet(window.innerWidth <= 1024);
       setIs1100pxScreen(window.innerWidth <= 1100);
     };
     

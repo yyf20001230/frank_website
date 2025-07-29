@@ -109,9 +109,10 @@
 
 .placeholder-content img,
 .placeholder-content video {
-  width: 100%;
+  width: 70vw;
   max-width: none;
   min-width: auto;
+  margin-left: 20vw;
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -455,7 +456,7 @@
   }
 
   .efficient-simplex-container {
-    padding: 1rem;
+    padding: 0;
   }
 
   .efficient-simplex-title {
@@ -467,13 +468,15 @@
   }
 
   .image-placeholder {
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 0;
+    margin: 0;
     width: 100%;
+    text-align: center;
   }
 
   .image-subtitle {
     font-size: 0.75rem;
+    text-align: center;
   }
 
   .overview-right h2 {
@@ -513,8 +516,8 @@
   }
 
   .math-equation {
-    padding: 0.6rem;
-    margin: 1rem 0;
+    padding: 0;
+    margin: 0;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
@@ -544,6 +547,8 @@
     max-width: none;
     height: auto;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
 
   .image-placeholder-large .placeholder-content img {
@@ -551,10 +556,12 @@
     max-width: none;
     height: auto;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
 
   .results-table {
-    padding: 1rem;
+    padding: 0;
   }
 
   .results-table h4 {

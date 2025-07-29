@@ -406,7 +406,7 @@
   }
 
   .behavior1k-container {
-    padding: 1rem;
+    padding: 0;
   }
 
   .behavior1k-title {
@@ -418,12 +418,14 @@
   }
 
   .image-placeholder {
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
   }
 
   .image-subtitle {
     font-size: 0.75rem;
+    text-align: center;
   }
 
   .overview-right h2 {
@@ -469,7 +471,7 @@
   }
 
   .code-example {
-    padding: 1rem;
+    padding: 0;
   }
 
   .code-example pre {
@@ -492,16 +494,18 @@
   .placeholder-content img,
   .placeholder-content video {
     width: 100%;
-    max-width: 600px;
     height: auto;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
 
   .image-placeholder-large .placeholder-content img {
     width: 100%;
-    max-width: 800px;
     height: auto;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
   }
 
   .code-example h4,
