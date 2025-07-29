@@ -460,7 +460,6 @@
 }
 
 .gpt-float-search-icon-inside,
-.gpt-float-clear-btn,
 .gpt-float-loading {
   position: absolute;
   right: 0.7rem;
@@ -490,6 +489,16 @@
   border-radius: 50%;
   padding: 0.2rem;
   transition: background 0.2s, color 0.2s;
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 }
 .gpt-float-clear-btn:hover {
   background: #f0f0f0;
@@ -551,6 +560,10 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .gpt-float-container {
     /* display: none; */
+  }
+  .gpt-float-clear-btn {
+    z-index: 10;
+    pointer-events: auto;
   }
 }
 

@@ -80,6 +80,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: calc(100vw - 4rem);
+  margin-left: calc(-50vw + 50% + 2rem);
+  margin-right: calc(-50vw + 50% + 2rem);
 }
 
 .placeholder-content {
@@ -108,9 +111,9 @@
 
 .placeholder-content img,
 .placeholder-content video {
-  width: 60vw;
-  max-width: 600px;
-  min-width: 300px;
+  width: 100%;
+  max-width: none;
+  min-width: auto;
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -287,12 +290,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: calc(100vw - 4rem);
+  margin-left: calc(-50vw + 50% + 2rem);
+  margin-right: calc(-50vw + 50% + 2rem);
 }
 
 .image-placeholder-large .placeholder-content img {
-  width: 80vw;
-  max-width: 800px;
-  min-width: 400px;
+  width: 100%;
+  max-width: none;
+  min-width: auto;
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -369,6 +375,9 @@
   .image-placeholder {
     padding: 1.5rem;
     margin: 1.5rem 0;
+    width: calc(100vw - 3rem);
+    margin-left: calc(-50vw + 50% + 1.5rem);
+    margin-right: calc(-50vw + 50% + 1.5rem);
   }
 
   .image-subtitle {
@@ -415,6 +424,9 @@
   .image-placeholder-large {
     padding: 1.5rem;
     margin: 1.5rem 0;
+    width: calc(100vw - 3rem);
+    margin-left: calc(-50vw + 50% + 1.5rem);
+    margin-right: calc(-50vw + 50% + 1.5rem);
   }
 
   .placeholder-content img,
@@ -460,6 +472,9 @@
   .image-placeholder {
     padding: 1rem;
     margin: 1rem 0;
+    width: calc(100vw - 2rem);
+    margin-left: calc(-50vw + 50% + 1rem);
+    margin-right: calc(-50vw + 50% + 1rem);
   }
 
   .image-subtitle {
@@ -531,14 +546,14 @@
   .placeholder-content img,
   .placeholder-content video {
     width: 100%;
-    max-width: 500px;
+    max-width: none;
     height: auto;
     object-fit: cover;
   }
 
   .image-placeholder-large .placeholder-content img {
     width: 100%;
-    max-width: 600px;
+    max-width: none;
     height: auto;
     object-fit: cover;
   }

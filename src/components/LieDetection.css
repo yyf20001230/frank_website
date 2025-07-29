@@ -222,6 +222,7 @@
   }
   .overview-left {
     justify-content: center;
+    width: 85vw;
   }
   .lie-detection-image {
     width: 300px;

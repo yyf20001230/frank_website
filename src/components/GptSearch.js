@@ -97,7 +97,9 @@ function GptSearch() {
     setLoading(false);
   };
 
-  const handleClear = () => {
+  const handleClear = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setQuery('');
     textareaRef.current && textareaRef.current.focus();
     setLastResponseQuery('');
@@ -192,7 +194,14 @@ function GptSearch() {
                 </span>
               )}
               {query.length > 0 && !loading && (
-                <button className="gpt-float-clear-btn" type="button" onClick={handleClear} tabIndex={0} aria-label="Clear">
+                <button 
+                  className="gpt-float-clear-btn" 
+                  type="button" 
+                  onClick={handleClear} 
+                  onMouseDown={(e) => e.preventDefault()}
+                  tabIndex={0} 
+                  aria-label="Clear"
+                >
                   <FaTimes />
                 </button>
               )}

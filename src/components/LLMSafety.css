@@ -397,7 +397,7 @@
   }
   
   .placeholder-content img {
-    max-width: 70%;
+    width: 100vw;
   }
   
   .image-placeholder-large .placeholder-content img {
@@ -493,7 +493,7 @@
   }
   
   .placeholder-content img {
-    width: 35vw;
+    width: 100vw;
     max-width: 300px;
     min-width: 150px;
   }
