@@ -107,6 +107,7 @@ function GptSearch() {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
+      e.stopPropagation();
       if (!loading && apiKey && query.trim()) {
         handleSubmit(e);
       }
@@ -137,9 +138,9 @@ function GptSearch() {
   }, [expanded, query.length]);
 
   // Don't render the component on mobile/tablet
-  if (isMobileOrTablet) {
-    return null;
-  }
+  // if (isMobileOrTablet) {
+  //   return null;
+  // }
 
   return (
     <div className="gpt-float-container" ref={containerRef}
