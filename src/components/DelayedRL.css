@@ -10,7 +10,7 @@
 }
 
 .delayed-rl-container {
-  max-width: 1200px;
+  max-width: 80vw;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -371,6 +371,12 @@
   }
   .delayed-rl-details p {
     font-size: 1rem;
+  }
+  
+  .math-equation {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
   
   .results-table {

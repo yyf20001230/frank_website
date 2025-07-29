@@ -505,6 +505,36 @@
   color: #e05500;
 }
 
+.gpt-float-search-btn {
+  background: none;
+  border: none;
+  color: #ff7061;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.2rem;
+  transition: background 0.2s, color 0.2s;
+  position: absolute;
+  right: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.gpt-float-search-btn:hover:not(:disabled) {
+  background: #f0f0f0;
+  color: #e05500;
+}
+
+.gpt-float-search-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
 .gpt-float-loading {
   width: 1.2em;
   height: 1.2em;
@@ -562,6 +592,14 @@
     /* display: none; */
   }
   .gpt-float-clear-btn {
+    z-index: 10;
+    pointer-events: auto;
+  }
+}
+
+/* 1100px and below - Search button instead of clear button */
+@media (max-width: 1100px) {
+  .gpt-float-search-btn {
     z-index: 10;
     pointer-events: auto;
   }

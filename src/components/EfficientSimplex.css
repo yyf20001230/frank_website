@@ -10,7 +10,7 @@
 }
 
 .efficient-simplex-container {
-  max-width: 1200px;
+  max-width: 80vw;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -80,9 +80,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100vw - 4rem);
-  margin-left: calc(-50vw + 50% + 2rem);
-  margin-right: calc(-50vw + 50% + 2rem);
+  width: 100%;
 }
 
 .placeholder-content {
@@ -290,9 +288,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100vw - 4rem);
-  margin-left: calc(-50vw + 50% + 2rem);
-  margin-right: calc(-50vw + 50% + 2rem);
+  width: 100%;
 }
 
 .image-placeholder-large .placeholder-content img {
@@ -419,27 +415,28 @@
   .math-equation {
     padding: 0.8rem;
     margin: 1.2rem 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 
   .image-placeholder-large {
     padding: 1.5rem;
     margin: 1.5rem 0;
-    width: calc(100vw - 3rem);
-    margin-left: calc(-50vw + 50% + 1.5rem);
-    margin-right: calc(-50vw + 50% + 1.5rem);
+    width: 100%;
   }
 
   .placeholder-content img,
   .placeholder-content video {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
   }
 
   .image-placeholder-large .placeholder-content img {
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
   }
@@ -472,9 +469,7 @@
   .image-placeholder {
     padding: 1rem;
     margin: 1rem 0;
-    width: calc(100vw - 2rem);
-    margin-left: calc(-50vw + 50% + 1rem);
-    margin-right: calc(-50vw + 50% + 1rem);
+    width: 100%;
   }
 
   .image-subtitle {

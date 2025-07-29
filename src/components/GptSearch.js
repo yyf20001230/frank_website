@@ -11,6 +11,7 @@ function GptSearch() {
   const [hovered, setHovered] = useState(false);
   const [lastResponseQuery, setLastResponseQuery] = useState('');
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
+  const [is1100pxScreen, setIs1100pxScreen] = useState(false);
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
   const textareaRef = useRef(null);
 
@@ -25,6 +26,7 @@ function GptSearch() {
   useEffect(() => {
     const checkScreenSize = () => {
       setIsMobileOrTablet(window.innerWidth <= 1024);
+      setIs1100pxScreen(window.innerWidth <= 1100);
     };
     
     checkScreenSize();
@@ -126,10 +128,15 @@ function GptSearch() {
   useEffect(() => {
     function handleClickOutside(event) {
       if (containerRef.current && !containerRef.current.contains(event.target)) {
-        if (query.length === 0) setHovered(false);
+        // Never collapse if there's text in the input
+        if (query.length === 0) {
+          setHovered(false);
+        }
       }
     }
-    if (expanded) {
+    // Only add click outside listener if there's no text
+    // This ensures the chatbot never collapses when there's text
+    if (query.length === 0) {
       document.addEventListener('mousedown', handleClickOutside);
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -137,7 +144,7 @@ function GptSearch() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [expanded, query.length]);
+  }, [query.length]);
 
   // Don't render the component on mobile/tablet
   // if (isMobileOrTablet) {
@@ -147,7 +154,12 @@ function GptSearch() {
   return (
     <div className="gpt-float-container" ref={containerRef}
       onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => { if (query.length === 0) setHovered(false); }}
+      onMouseLeave={() => { 
+        // Only set hover to false if there's no text, otherwise keep it expanded
+        if (query.length === 0) {
+          setHovered(false);
+        }
+      }}
     >
       {shouldShowResponse && (
         <div className="gpt-chat-bubble">
@@ -188,22 +200,33 @@ function GptSearch() {
                   fontSize: '16px' // Prevents zoom on iOS
                 }}
               />
-              {query.length === 0 && !loading && (
-                <span className="gpt-float-search-icon-inside" tabIndex={-1} aria-hidden="true">
-                  <FaSearch />
-                </span>
-              )}
-              {query.length > 0 && !loading && (
-                <button 
-                  className="gpt-float-clear-btn" 
-                  type="button" 
-                  onClick={handleClear} 
-                  onMouseDown={(e) => e.preventDefault()}
-                  tabIndex={0} 
-                  aria-label="Clear"
-                >
-                  <FaTimes />
-                </button>
+              {!loading && (
+                is1100pxScreen ? (
+                  <button 
+                    className="gpt-float-search-btn" 
+                    type="button" 
+                    onClick={handleSubmit} 
+                    onMouseDown={(e) => e.preventDefault()}
+                    tabIndex={0} 
+                    aria-label="Search"
+                    disabled={!apiKey || !query.trim()}
+                  >
+                    <FaSearch />
+                  </button>
+                ) : (
+                  query.length > 0 && (
+                    <button 
+                      className="gpt-float-clear-btn" 
+                      type="button" 
+                      onClick={handleClear} 
+                      onMouseDown={(e) => e.preventDefault()}
+                      tabIndex={0} 
+                      aria-label="Clear"
+                    >
+                      <FaTimes />
+                    </button>
+                  )
+                )
               )}
               {loading && (
                 <span className="gpt-float-loading" />
