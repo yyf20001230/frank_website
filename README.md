@@ -72,3 +72,79 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
+Great! Your build was successful. Here are the best hosting options:
+
+## **Option 1: GitHub Pages (Recommended for your case)**
+
+Since you already have a GitHub repository, this is the easiest option:
+
+1. **Install gh-pages package:**
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+2. **Add homepage to package.json:**
+   ```json
+   "homepage": "https://yyf20001230.github.io/frank_website"
+   ```
+
+3. **Add deploy scripts to package.json:**
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+4. **Deploy:**
+   ```bash
+   npm run deploy
+   ```
+
+## **Option 2: Netlify (Free & Professional)**
+
+1. **Push your code to GitHub**
+2. **Go to [netlify.com](https://netlify.com)**
+3. **Connect your GitHub repository**
+4. **Set build command:** `npm run build`
+5. **Set publish directory:** `build`
+6. **Deploy automatically**
+
+## **Option 3: Vercel (Free & Fast)**
+
+1. **Install Vercel CLI:**
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Deploy:**
+   ```bash
+   vercel
+   ```
+
+## **Option 4: Firebase Hosting (Free & Google)**
+
+1. **Install Firebase CLI:**
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+2. **Initialize Firebase:**
+   ```bash
+   firebase init hosting
+   ```
+
+3. **Deploy:**
+   ```bash
+   firebase deploy
+   ```
+
+## **Which option would you prefer?**
+
+- **GitHub Pages**: Easiest, free, good for portfolios
+- **Netlify**: More features, automatic deployments, custom domains
+- **Vercel**: Fastest, great for React apps
+- **Firebase**: Google's hosting, good integration with other Google services
+
+Let me know which one you'd like to set up and I'll help you configure it!
+
