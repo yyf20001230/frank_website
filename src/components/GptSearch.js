@@ -204,9 +204,6 @@ function GptSearch() {
               type="submit" 
               disabled={loading || !apiKey || !query.trim()} 
               style={{ display: 'none' }}
-              ref={(el) => {
-                if (el) el.form = document.querySelector('.gpt-float-form');
-              }}
             >
               <FaSearch />
             </button>

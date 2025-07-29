@@ -34,6 +34,8 @@
   padding: 0.5rem;
   gap: 4px;
   outline: none;
+  z-index: 1002;
+  position: relative;
 }
 
 .hamburger-menu:focus {
@@ -99,6 +101,7 @@
     padding: 0.8rem 0;
     left: 0;
     right: 0;
+    z-index: 9998;
   }
   
   .nav-container {
@@ -106,14 +109,13 @@
     padding: 0 1rem;
     width: 100vw;
     justify-content: space-between;
+    position: relative;
   }
   
   .hamburger-menu {
     display: flex;
-  }
-  
-  .hamburger-menu {
-    display: flex;
+    z-index: 10000;
+    position: relative;
   }
   
   .nav-links {
@@ -130,13 +132,14 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
+    z-index: 9999;
     /* Safe area support for mobile menu */
     padding-left: max(0, env(safe-area-inset-left));
     padding-right: max(0, env(safe-area-inset-right));
   }
   
   .nav-links.mobile-open {
-    max-height: 300px;
+    max-height: 400px;
   }
   
   .nav-links li {
