@@ -87,7 +87,6 @@
   font-family: 'Oxanium';
   font-size: 3.2rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
   line-height: 1.2;
   color: #111;
 }
@@ -242,6 +241,7 @@
   object-fit: cover;
   display: block;
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  margin-top: 2rem;
 }
 
 .merged-about-content,

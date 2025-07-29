@@ -397,6 +397,13 @@
   }
 }
 
+/* iPad Landscape Mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .delayed-rl-container {
+    padding: 3rem 4rem;
+  }
+}
+
 @media (max-width: 700px) {
   .delayed-rl-section {
     padding: 1.5rem 0;
@@ -443,12 +450,12 @@
     font-size: 0.9rem;
   }
   .link-button {
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
   }
   .back-button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
   }
   
   .math-equation {

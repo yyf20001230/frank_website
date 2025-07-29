@@ -547,18 +547,47 @@
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* iPad Landscape Mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .gpt-float-icon.expanded {
+    width: 70vw !important;
+    min-width: 0 !important;
+    max-width: 70vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .gpt-chat-bubble {
+    max-width: 65vw;
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 600px) {
   .gpt-float-container {
     bottom: 1.2rem;
     right: 1.2rem;
   }
   .gpt-float-icon.expanded {
-    width: 98vw !important;
+    width: 85vw !important;
     min-width: 0 !important;
-    max-width: 99vw;
+    max-width: 85vw;
+    left: 50%;
+    transform: translateX(-50%);
   }
   .gpt-chat-bubble {
-    max-width: 95vw;
+    max-width: 80vw;
     font-size: 0.98rem;
+  }
+}
+
+/* iPhone Portrait Mode */
+@media (max-width: 480px) {
+  .gpt-float-icon.expanded {
+    width: 90vw !important;
+    max-width: 90vw;
+  }
+  .gpt-chat-bubble {
+    max-width: 85vw;
+    font-size: 0.95rem;
   }
 } 

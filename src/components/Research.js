@@ -78,7 +78,7 @@ const researchProjects = [
     }
   },
   {
-    title: 'Behavior 1K: A Human-Centered, Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation',
+    title: 'Behavior 1K: An Embodied AI Benchmark with 1,000 Everyday Activities and Realistic Simulation',
     links: [
       { label: 'Project', url: 'https://behavior.stanford.edu/behavior-1k' },
       { label: 'Paper', url: 'https://arxiv.org/abs/2403.09227' },

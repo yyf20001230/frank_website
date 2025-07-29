@@ -54,10 +54,10 @@ function Navigation({ dark }) {
             </button>
           </li>
           <li>
-            <button onClick={() => handleNav('research')}>Research</button>
+            <button onClick={() => handleNav('projects')}>Projects</button>
           </li>
           <li>
-            <button onClick={() => handleNav('projects')}>Projects</button>
+            <button onClick={() => handleNav('research')}>Research</button>
           </li>
           <li>
             <Link to="/more" className={location.pathname === '/more' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>More</Link>

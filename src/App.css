@@ -24,6 +24,8 @@ html, body {
 .main-content {
   flex: 1;
   padding-top: 80px;
+  /* Safe area support for iPhone */
+  padding-top: max(80px, calc(80px + env(safe-area-inset-top)));
 }
 
 .main-content section {
@@ -57,6 +59,11 @@ html, body {
   
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* Enhanced safe area support for mobile */
+  .main-content {
+    padding-top: max(70px, calc(70px + env(safe-area-inset-top)));
   }
 }
 

@@ -32,11 +32,11 @@ function MainPage() {
       <section id="work">
         <WorkExperience />
       </section>
-      <section id="research">
-        <Research />
-      </section>
       <section id="projects">
         <Projects />
+      </section>
+      <section id="research">
+        <Research />
       </section>
     </main>
   );

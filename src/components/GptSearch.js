@@ -92,7 +92,9 @@ function GptSearch() {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      if (!loading && apiKey && query) handleSubmit(e);
+      if (!loading && apiKey && query.trim()) {
+        handleSubmit(e);
+      }
     }
   };
 
@@ -150,7 +152,18 @@ function GptSearch() {
                 rows={query.split('\n').length > 1 ? 2 : 1}
                 maxLength={400}
                 onKeyDown={handleKeyDown}
-                style={{ resize: 'none', paddingRight: 36, minHeight: 40, maxHeight: 80, height: barHeight, overflowY: 'auto', display: 'block', boxSizing: 'border-box', width: '100%' }}
+                style={{ 
+                  resize: 'none', 
+                  paddingRight: 36, 
+                  minHeight: 40, 
+                  maxHeight: 80, 
+                  height: barHeight, 
+                  overflowY: 'auto', 
+                  display: 'block', 
+                  boxSizing: 'border-box', 
+                  width: '100%',
+                  fontSize: '16px' // Prevents zoom on iOS
+                }}
               />
               {query.length === 0 && !loading && (
                 <span className="gpt-float-search-icon-inside" tabIndex={-1} aria-hidden="true">
@@ -166,7 +179,15 @@ function GptSearch() {
                 <span className="gpt-float-loading" />
               )}
             </div>
-            <button className="gpt-float-btn" type="submit" disabled={loading || !apiKey || !query} style={{ display: 'none' }}>
+            <button 
+              className="gpt-float-btn" 
+              type="submit" 
+              disabled={loading || !apiKey || !query.trim()} 
+              style={{ display: 'none' }}
+              ref={(el) => {
+                if (el) el.form = document.querySelector('.gpt-float-form');
+              }}
+            >
               <FaSearch />
             </button>
           </form>
