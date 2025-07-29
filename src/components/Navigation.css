@@ -8,10 +8,6 @@
   right: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  /* Safe area support for iPhone */
-  padding-top: max(1rem, env(safe-area-inset-top));
-  padding-left: max(0, env(safe-area-inset-left));
-  padding-right: max(0, env(safe-area-inset-right));
   overflow-x: hidden;
   width: 100vw;
 }

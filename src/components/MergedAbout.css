@@ -67,8 +67,7 @@
 }
 
 .merged-about-container {
-  max-width: 80vw;
-  width: 100%;
+  width: 75vw;
   display: flex;
   gap: 4rem;
   align-items: flex-start;
