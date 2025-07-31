@@ -26,10 +26,9 @@ function GptSearch() {
               // Check for touch screen devices
       useEffect(() => {
         const checkTouchScreen = () => {
-          // Check for touch capability or common touch screen indicators
-          const isTouch = 'ontouchstart' in window || 
-                          navigator.maxTouchPoints > 0 || 
-                          navigator.msMaxTouchPoints > 0;
+          // Check for actual touch capability - more specific to avoid false positives on desktop
+          const isTouch = ('ontouchstart' in window && navigator.maxTouchPoints > 0) || 
+                          (navigator.maxTouchPoints > 0 && window.innerWidth <= 1100);
           setIsTouchScreen(isTouch);
         };
         
